@@ -8,10 +8,11 @@ import { MatTableDataSource } from '@angular/material/table';
   templateUrl: './listagem-usuario-tabela.component.html',
   styleUrls: ['./listagem-usuario-tabela.component.css']
 })
-export class ListagemUsuarioTabelaComponent implements OnInit {
+export class ListagemUsuarioTabelaComponent {
   dataSource!: MatTableDataSource<Usuario>;
 
   displayedColumns: string[] = ['id', 'nome', 'cpf', 'ações'];
+  roteador: any;
 
   constructor(private usuarioService: UsuarioService) {
   }
