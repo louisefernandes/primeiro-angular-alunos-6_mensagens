@@ -13,7 +13,7 @@ import {PipesModule} from '../pipes/pipes.module';
 import {FlexModule} from '@angular/flex-layout';
 import {RouterLink} from '@angular/router';
 import { ListagemUsuarioTabelaComponent } from './listagem-usuario-tabela/listagem-usuario-tabela.component';
-
+import {MatTableModule} from '@angular/material/table';
 
 
 @NgModule({
@@ -33,11 +33,13 @@ import { ListagemUsuarioTabelaComponent } from './listagem-usuario-tabela/listag
     MatBadgeModule,
     PipesModule,
     FlexModule,
-    RouterLink
+    RouterLink,
+    MatTableModule
   ],
   exports: [
     ListagemUsuariosComponent,
-    MantemUsuarioComponent
+    MantemUsuarioComponent,
+    ListagemUsuarioTabelaComponent
   ]
 })
 export class UsuarioModule { }
