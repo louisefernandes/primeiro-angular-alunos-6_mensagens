@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../../shared/modelo/usuario';
 import { UsuarioService } from '../../shared/services/usuario.service';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-listagem-usuario-tabela',
@@ -14,13 +15,18 @@ export class ListagemUsuarioTabelaComponent {
   displayedColumns: string[] = ['id', 'nome', 'cpf', 'ações'];
   roteador: any;
 
-  constructor(private usuarioService: UsuarioService) {
+  constructor(private usuarioService: UsuarioService, roteador: Router) {
   }
 
   ngOnInit(): void {
     this.usuarioService.listar().subscribe(
       usuarios => this.dataSource = new MatTableDataSource(usuarios)
     );
+  }
+
+  editar(id: number): void {
+    console.log(id)
+    this.roteador.navigate(['editausuario', id])
   }
 
   apagar(id: number): void {
