@@ -12,10 +12,11 @@ import { Router } from '@angular/router';
 export class ListagemUsuarioTabelaComponent {
   dataSource!: MatTableDataSource<Usuario>;
 
-  displayedColumns: string[] = ['id', 'nome', 'cpf', 'ações'];
-  roteador: any;
+  displayedColumns = ['id', 'nome', 'cpf', 'ações'];
+  roteador: Router;
 
   constructor(private usuarioService: UsuarioService, roteador: Router) {
+    this.roteador = roteador;
   }
 
   ngOnInit(): void {
