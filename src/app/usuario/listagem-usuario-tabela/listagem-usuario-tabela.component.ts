@@ -13,6 +13,7 @@ export class ListagemUsuarioTabelaComponent {
   dataSource!: MatTableDataSource<Usuario>;
 
   displayedColumns = ['nome', 'cpf', 'idade', 'ações'];
+usuarios: CdkTableDataSourceInput<any>;
 
   constructor(private usuarioService: UsuarioService,private roteador: Router) {
   }
