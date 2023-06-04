@@ -1,35 +1,33 @@
 <mat-table [dataSource]="dataSource">
 
-    <ng-container matColumnDef="id">
-    <th mat-header-cell *matHeaderCellDef> id </th>
-    <td mat-cell *matCellDef="let usuario"> {{ usuario.id }} </td>
-  </ng-container>
-
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  
   <ng-container matColumnDef="nome">
-    <th mat-header-cell *matHeaderCellDef> nome </th>
-    <td mat-cell *matCellDef="let usuario"> {{ usuario.nome }} </td>
-  </ng-container>
-
+    <mat-header-cell *matHeaderCellDef>Nome</mat-header-cell>
+    <mat-cell *matCellDef="let item">{{item.nome}}</mat-cell>
+   </ng-container>
+  
   <ng-container matColumnDef="cpf">
-    <th mat-header-cell *matHeaderCellDef> cpf </th>
-    <td mat-cell *matCellDef="let usuario"> {{ usuario.cpf }} </td>
+     <mat-header-cell *matHeaderCellDef>CPF</mat-header-cell>
+     <mat-cell *matCellDef="let item">{{item.cpf | cpf}}</mat-cell>
   </ng-container>
-
+  
   <ng-container matColumnDef="idade">
-    <th mat-header-cell *matHeaderCellDef> idade </th>
-    <td mat-cell *matCellDef="let usuario"> {{ usuario.idade }} </td>
+    <mat-header-cell *matHeaderCellDef>Idade</mat-header-cell>
+    <mat-cell *matCellDef="let item">{{item.idade}}</mat-cell>
   </ng-container>
 
-  <ng-container matColumnDef="ações">
-    <th mat-header-cell *matHeaderCellDef> ações </th>
-    <td mat-cell *matCellDef="let usuario">
-      <button mat-icon-button [routerLink]="['/editausuario', usuario.id]">
+  <ng-container matColumnDef="acoes">
+    <mat-header-cell *matHeaderCellDef>Ações</mat-header-cell>
+    <mat-cell *matCellDef="let item">
+      <button  (click)="editar(item.id)" mat-icon-button>
         <mat-icon>edit</mat-icon>
       </button>
-      <button mat-icon-button (click)="apagar(usuario.id)">
-        <mat-icon>delete</mat-icon>
+      <button (click)="apagar(item.id)" mat-icon-button>
+        <mat-icon >delete</mat-icon>
       </button>
-    </td>
+    </mat-cell>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

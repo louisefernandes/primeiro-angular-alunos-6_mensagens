@@ -38,7 +38,8 @@ import {MatTableModule} from '@angular/material/table';
   ],
   exports: [
     ListagemUsuariosComponent,
-    MantemUsuarioComponent
+    MantemUsuarioComponent,
+    ListagemUsuarioTabelaComponent
   ]
 })
 export class UsuarioModule { }

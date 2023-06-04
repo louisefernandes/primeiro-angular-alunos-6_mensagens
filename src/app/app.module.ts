@@ -20,7 +20,6 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MensagemService} from './shared/services/mensagem.service';
 import {MensagemSweetService} from './shared/services/mensagem-sweet.service';
 import {IMensagem} from './shared/modelo/IMensagem';
-import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 @NgModule({
   declarations: [
     AppComponent
@@ -40,8 +39,7 @@ import { MatTableDataSource, MatTableModule } from '@angular/material/table';
     LayoutModule,
     UsuarioModule,
     HttpClientModule,
-    MatSnackBarModule,
-    MatTableModule,
+    MatSnackBarModule
   ],
   providers: [
     {
