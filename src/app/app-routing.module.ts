@@ -18,7 +18,7 @@ const routes: Routes = [
     component: ListagemUsuariosComponent
   },
   {
-    path: 'listagemtabelausuarios',
+    path: 'listagemusuariostabela',
     component: ListagemUsuarioTabelaComponent
   }
 ];

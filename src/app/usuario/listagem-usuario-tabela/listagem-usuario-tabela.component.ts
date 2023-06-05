@@ -10,12 +10,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./listagem-usuario-tabela.component.css']
 })
 export class ListagemUsuarioTabelaComponent {
-  dataSource!: MatTableDataSource<Usuario>;
+  dataSource: MatTableDataSource<Usuario>;
 
-  displayedColumns = ['nome', 'cpf', 'idade', 'ações'];
-usuarios: CdkTableDataSourceInput<any>;
+  displayedColumns = ['nome', 'cpf', 'idade', 'acoes'];
 
   constructor(private usuarioService: UsuarioService,private roteador: Router) {
+    this.dataSource = new MatTableDataSource();
   }
 
   ngOnInit(): void {

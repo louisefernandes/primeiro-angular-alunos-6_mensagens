@@ -1,3 +1,4 @@
+
 <mat-table [dataSource]="dataSource">
 
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
@@ -29,8 +30,5 @@
       </button>
     </mat-cell>
   </ng-container>
-
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   
 </mat-table>
